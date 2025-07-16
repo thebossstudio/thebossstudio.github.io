@@ -4,11 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HananDev | Game Developer</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="logo.png" />
 
-    <!-- Fonts and Icons -->
+    <link rel="icon" type="image/png" href="logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
@@ -35,6 +32,7 @@
             0% {
                 text-shadow: 0 0 5px #FFD700;
             }
+
             100% {
                 text-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700;
             }
@@ -77,11 +75,11 @@
             transition: transform 0.3s ease, font-size 0.3s ease;
         }
 
-        .socials a:hover {
-            transform: scale(1.5);
-            color: #fff;
-            font-size: 2.9rem;
-        }
+            .socials a:hover {
+                transform: scale(1.5);
+                color: #fff;
+                font-size: 2.9rem;
+            }
 
         .tagline {
             text-align: center;
@@ -91,10 +89,10 @@
             padding: 1rem 2rem 2.5rem;
         }
 
-        .tagline .highlight {
-            color: #FFD700;
-            font-weight: bold;
-        }
+            .tagline .highlight {
+                color: #FFD700;
+                font-weight: bold;
+            }
 
         .highlights {
             display: flex;
@@ -118,20 +116,20 @@
             transition: transform 0.3s ease;
         }
 
-        .highlight-box:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px #FFD700;
-        }
+            .highlight-box:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 15px #FFD700;
+            }
 
-        .highlight-box h3 {
-            font-size: 1.9rem;
-            margin-bottom: 0.6rem;
-        }
+            .highlight-box h3 {
+                font-size: 1.9rem;
+                margin-bottom: 0.6rem;
+            }
 
-        .highlight-box p {
-            font-size: 1.3rem;
-            color: #eeeeee;
-        }
+            .highlight-box p {
+                font-size: 1.3rem;
+                color: #eeeeee;
+            }
 
         .section {
             padding: 3rem 1rem;
@@ -139,16 +137,16 @@
             margin: auto;
         }
 
-        .section h2 {
-            color: #FFD700;
-            text-align: center;
-            font-size: 2.7rem;
-            margin-bottom: 3rem;
-        }
+            .section h2 {
+                color: #FFD700;
+                text-align: center;
+                font-size: 2.7rem;
+                margin-bottom: 3rem;
+            }
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2.5rem;
         }
 
@@ -160,29 +158,29 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .project:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 20px #FFD700;
-        }
+            .project:hover {
+                transform: scale(1.02);
+                box-shadow: 0 0 20px #FFD700;
+            }
 
-        .project h3 {
-            margin: 0 0 0.8rem;
-            color: #FFD700;
-            font-size: 2rem;
-        }
+            .project h3 {
+                margin: 0 0 0.8rem;
+                color: #FFD700;
+                font-size: 2rem;
+            }
 
-        .project iframe {
-            width: 100%;
-            height: 320px;
-            border: none;
-            border-radius: 12px;
-        }
+            .project iframe {
+                width: 100%;
+                height: 320px;
+                border: none;
+                border-radius: 12px;
+            }
 
-        .project p {
-            margin-top: 1.2rem;
-            font-size: 1.3rem;
-            color: #FFD700;
-        }
+            .project p {
+                margin-top: 1.2rem;
+                font-size: 1.3rem;
+                color: #FFD700;
+            }
 
         .placeholder {
             width: 100%;
@@ -196,34 +194,34 @@
             padding-top: 3rem;
         }
 
-        .contact h2 {
-            font-size: 2.2rem;
-            color: #FFD700;
-        }
+            .contact h2 {
+                font-size: 2.2rem;
+                color: #FFD700;
+            }
 
-        .contact a {
-            color: #FFD700;
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
+            .contact a {
+                color: #FFD700;
+                font-size: 1.5rem;
+                text-decoration: none;
+            }
 
-        .contact a:hover {
-            text-decoration: underline;
-        }
+                .contact a:hover {
+                    text-decoration: underline;
+                }
 
         .whatsapp {
             margin-top: 1rem;
         }
 
-        .whatsapp a {
-            color: #FFD700;
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
+            .whatsapp a {
+                color: #FFD700;
+                font-size: 1.5rem;
+                text-decoration: none;
+            }
 
-        .whatsapp a:hover {
-            text-decoration: underline;
-        }
+                .whatsapp a:hover {
+                    text-decoration: underline;
+                }
 
         footer {
             text-align: center;
@@ -275,6 +273,10 @@
             .placeholder {
                 height: 200px;
             }
+
+            .projects {
+                grid-template-columns: 1fr !important;
+            }
         }
     </style>
 </head>
@@ -285,7 +287,7 @@
     <header>
         <div class="title-wrapper">
             <img src="logo.png" alt="Logo" class="logo" />
-            <h1>HananDev</h1>           
+            <h1>HananDev</h1>
         </div>
         <div class="socials">
             <a href="https://www.youtube.com/@BOSS_Studio_o" target="_blank"><i class="fab fa-youtube"></i></a>
@@ -316,24 +318,24 @@
         <h2>Game Showcases</h2>
         <div class="projects">
             <div class="project">
-                <h3>My Game Trailer</h3>
+                <h3>Bad Dream - Horror Game</h3>
                 <iframe src="https://www.youtube.com/embed/au5YnrbgX0U" allowfullscreen></iframe>
-                <p>High-speed action and intense gameplay packed into this demo — built entirely in Unity with C++ custom systems.</p>
+                <p>A first-person horror experience crafted in Unity, featuring dynamic object interaction, immersive sound design, and real-time lighting. Players must navigate a dark, atmospheric basement — uncover clues, interact with the environment, survive jumpscares, and find the hidden key to escape.</p>
+            </div>
+            <div class="project">
+                <h3>Last Drop - FPS Survival</h3>
+                <iframe src="https://www.youtube.com/embed/VnhXbwZccTQ" allowfullscreen></iframe>
+                <p>A FPS survival game where you fight off enemy shooters, hostile bandits, and two types of zombies — weak runners and massive tanks with heavy health. Bandits can be turned into bodyguards to fight by your side. Features a full base-building system with placeable walls, floors, stairs, and doors, letting players craft defenses in a world that's always trying to kill them.</p>
+            </div>
+            <div class="project">
+                <h3>Racing Car Parking - Parking Game</h3>
+                <iframe src="https://www.youtube.com/embed/n7ulb08QzKA" allowfullscreen></iframe>
+                <p>A racing car parking game combining speed and precision. Navigate tight courses with realistic controls and park high-performance cars through increasingly difficult levels designed to test timing, reflexes, and accuracy under pressure.</p>
             </div>
             <div class="project">
                 <h3>Coming Soon</h3>
                 <div class="placeholder"></div>
-                <p>Stay tuned for the next drop — something epic is in the pipeline.</p>
-            </div>
-            <div class="project">
-                <h3>Coming Soon</h3>
-                <div class="placeholder"></div>
-                <p>Work in progress — next showcase will blow your mind.</p>
-            </div>
-            <div class="project">
-                <h3>Coming Soon</h3>
-                <div class="placeholder"></div>
-                <p>More gameplay goodness coming soon. Keep your eyes here.</p>
+                <p>This one’s gonna slap. No spoilers yet — just watch this space.</p>
             </div>
         </div>
     </section>
