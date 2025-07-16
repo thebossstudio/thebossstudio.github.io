@@ -5,36 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HananDev | Game Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Montserrat', sans-serif;
-      background-color: #0d0d0d;
+      background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
       color: #eee;
+      overflow-x: hidden;
     }
 
     header {
-      background-color: #1a1a1a;
-      padding: 2rem;
+      background-color: #111;
+      padding: 2rem 3rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      animation: fadeInDown 1s ease;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .logo {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       font-weight: 800;
-      color: #fff;
-    }
-
-    .tagline {
-      width: 100%;
-      margin-top: 1rem;
-      font-size: 1.4rem;
-      color: #ccc;
-      text-align: center;
-      font-weight: 500;
+      color: #ff3c3c;
     }
 
     .socials {
@@ -44,59 +48,80 @@
 
     .socials a {
       color: #eee;
-      font-size: 2rem;
-      text-decoration: none;
-      transition: all 0.3s ease;
+      font-size: 1.8rem;
+      transition: 0.3s;
     }
 
     .socials a:hover {
       color: #ff3c3c;
-      transform: scale(1.1);
+      transform: scale(1.2);
     }
 
-    .section {
-      padding: 3rem 2rem;
+    .tagline {
+      width: 100%;
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 1.4rem;
+      color: #ccc;
+      font-weight: 500;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section.section {
+      padding: 4rem 2rem;
       max-width: 1400px;
       margin: auto;
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     h2 {
       text-align: center;
       font-size: 2.5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
       color: #ff3c3c;
     }
 
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-      gap: 2.5rem;
+      gap: 3rem;
     }
 
     .video-block {
-      background-color: #1a1a1a;
+      background-color: #1d1d1d;
       padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #000;
-      transition: transform 0.3s ease;
+      border-radius: 14px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+      transition: 0.3s ease;
     }
 
     .video-block:hover {
-      transform: scale(1.02);
+      transform: scale(1.03);
+      box-shadow: 0 0 40px rgba(255, 60, 60, 0.3);
     }
 
     .video-title {
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: 700;
       color: #ff3c3c;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
       text-align: center;
     }
 
     .video-desc {
       font-size: 1.2rem;
       color: #ff3c3c;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
       text-align: center;
     }
 
@@ -105,7 +130,7 @@
       padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
-      border-radius: 8px;
+      border-radius: 10px;
     }
 
     .video-wrapper iframe {
@@ -119,21 +144,22 @@
 
     .contact {
       text-align: center;
-      margin-top: 4rem;
+      margin-top: 5rem;
     }
 
     .contact a {
       color: #ff3c3c;
       font-size: 1.5rem;
-      text-decoration: none;
       font-weight: 600;
+      text-decoration: none;
     }
 
     footer {
       text-align: center;
       padding: 2rem;
-      color: #666;
+      color: #888;
       font-size: 1rem;
+      background-color: #0f0f0f;
     }
 
     @media (max-width: 600px) {
@@ -148,17 +174,16 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <header>
     <div class="logo">HananDev</div>
     <div class="socials">
-      <a href="https://www.youtube.com/@BOSS_Studio_o" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.facebook.com/profile.php?id=61563591180711" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.youtube.com/@BOSS_Studio_o" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61563591180711" target="_blank"><i class="fab fa-facebook"></i></a>
     </div>
     <div class="tagline">
-      Game programmer focused on gameplay systems and performance — writing clean, efficient code to build immersive experiences and solve real dev challenges.
+      Game programmer focused on building immersive systems, writing clean and efficient gameplay code, and solving real-world dev challenges.
     </div>
   </header>
 
@@ -166,30 +191,26 @@
     <h2>Game Projects</h2>
     <div class="video-grid">
 
-      <!-- Video 1 -->
       <div class="video-block">
         <div class="video-title">Neon Pursuit</div>
         <div class="video-desc">High-speed futuristic chase built in Unity with custom C++ logic.</div>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/au5YnrbgX0U" title="Game Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/au5YnrbgX0U" title="Game Trailer" allowfullscreen></iframe>
         </div>
       </div>
 
-      <!-- Placeholder 2 -->
       <div class="video-block">
         <div class="video-title">Project 2</div>
         <div class="video-desc">Upcoming trailer – placeholder for future content.</div>
         <div class="video-wrapper"></div>
       </div>
 
-      <!-- Placeholder 3 -->
       <div class="video-block">
         <div class="video-title">Project 3</div>
         <div class="video-desc">Placeholder for gameplay footage or feature breakdown.</div>
         <div class="video-wrapper"></div>
       </div>
 
-      <!-- Placeholder 4 -->
       <div class="video-block">
         <div class="video-title">Project 4</div>
         <div class="video-desc">Cinematic or devlog teaser — Coming soon.</div>
