@@ -11,35 +11,65 @@
       background-color: #111;
       color: #eee;
     }
+
     header {
       background-color: #1e1e1e;
-      padding: 2rem;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .tagline {
+      width: 100%;
+      margin-top: 0.8rem;
+      font-size: 1.1rem;
+      color: #ccc;
       text-align: center;
     }
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
+
+    .socials {
+      display: flex;
+      gap: 1rem;
     }
-    header p {
-      font-size: 1.2rem;
-      color: #999;
+
+    .socials a {
+      color: #eee;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: color 0.3s;
     }
+
+    .socials a:hover {
+      color: #ff3c3c;
+    }
+
     .section {
       padding: 2rem;
       max-width: 1200px;
       margin: auto;
     }
+
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
       gap: 2rem;
     }
+
     .video-block {
       background-color: #1a1a1a;
       padding: 1.5rem;
       border-radius: 10px;
       box-shadow: 0 0 10px #000;
     }
+
     .video-title {
       font-size: 1.4rem;
       font-weight: bold;
@@ -47,12 +77,14 @@
       margin-bottom: 0.5rem;
       text-align: center;
     }
+
     .video-desc {
       font-size: 1rem;
-      color: #ccc;
+      color: #ff3c3c;
       margin-bottom: 1rem;
       text-align: center;
     }
+
     .video-wrapper {
       position: relative;
       padding-bottom: 56.25%;
@@ -60,6 +92,7 @@
       overflow: hidden;
       border-radius: 8px;
     }
+
     .video-wrapper iframe {
       position: absolute;
       top: 0;
@@ -68,26 +101,36 @@
       height: 100%;
       border: 0;
     }
+
     .contact {
       text-align: center;
       margin-top: 3rem;
     }
+
     .contact a {
       color: #00bfff;
       font-size: 1.2rem;
       text-decoration: none;
     }
+
     footer {
       text-align: center;
       padding: 1rem;
       color: #555;
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <header>
-    <h1>HananDev</h1>
-    <p>Unity + C++ Dev | I build games that speak for themselves.</p>
+    <div class="logo">HananDev</div>
+    <div class="socials">
+      <a href="https://www.youtube.com/@BOSS_Studio_o" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61563591180711" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+    </div>
+    <div class="tagline">
+      Game programmer focused on gameplay systems and performance — writing clean, efficient code to build immersive experiences and solve real dev challenges.
+    </div>
   </header>
 
   <section class="section">
@@ -105,21 +148,21 @@
         </div>
       </div>
 
-      <!-- Video 2 -->
+      <!-- Empty Project 2 -->
       <div class="video-block">
         <div class="video-title">Project 2</div>
         <div class="video-desc">Upcoming trailer – placeholder for future content.</div>
         <div class="video-wrapper"></div>
       </div>
 
-      <!-- Video 3 -->
+      <!-- Empty Project 3 -->
       <div class="video-block">
         <div class="video-title">Project 3</div>
         <div class="video-desc">Placeholder for gameplay footage or feature breakdown.</div>
         <div class="video-wrapper"></div>
       </div>
 
-      <!-- Video 4 -->
+      <!-- Empty Project 4 -->
       <div class="video-block">
         <div class="video-title">Project 4</div>
         <div class="video-desc">Cinematic or devlog teaser — Coming soon.</div>
