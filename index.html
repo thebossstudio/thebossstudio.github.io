@@ -1,310 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HananDev | Game Developer</title>
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HananDev | Game Developer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png" />
 
-  <style>
-    body {
-        margin: 0;
-        font-family: 'Orbitron', sans-serif;
-        background-color: #0d0d0d;
-        color: #eeeeee;
-    }
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-    .hero-title {
-        text-align: center;
-        font-size: 3.5rem;
-        margin: 1rem 0 0;
-        color: #FFD700;
-        text-shadow: 0 0 10px #FFD700;
-        animation: glowFade 2s ease-in-out infinite alternate;
-    }
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0d0d0d;
+            color: #eeeeee;
+        }
 
-    @keyframes glowFade {
-        0% { text-shadow: 0 0 5px #FFD700; }
-        100% { text-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700; }
-    }
+        .hero-title {
+            text-align: center;
+            font-size: 3.5rem;
+            margin: 1rem 0 0;
+            color: #FFD700;
+            text-shadow: 0 0 10px #FFD700;
+            animation: glowFade 2s ease-in-out infinite alternate;
+        }
 
-    header {
-        background-color: #0d0d0d;
-        padding: 1rem 2rem 1.5rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 2px solid #FFD700;
-    }
+        @keyframes glowFade {
+            0% {
+                text-shadow: 0 0 5px #FFD700;
+            }
+            100% {
+                text-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700;
+            }
+        }
 
-    .title-wrapper {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-    }
+        header {
+            background-color: #0d0d0d;
+            padding: 1rem 2rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #FFD700;
+            flex-wrap: wrap;
+        }
 
-    header h1 {
-        font-size: 3.8rem;
-        color: #FFD700;
-        margin: 0;
-    }
+        .title-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
 
-    .subtitle {
-        font-size: 1.5rem;
-        color: #FFD700;
-        background-color: #1a1a1a;
-        padding: 0.4rem 1rem;
-        border-radius: 10px;
-        border: 1px solid #FFD700;
-        margin-left: 2rem;
-    }
+        .logo {
+            height: 60px;
+            width: 60px;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 0 10px #FFD700;
+        }
 
-    .socials a {
-        margin-left: 2rem;
-        font-size: 2.5rem;
-        color: #FFD700;
-        transition: transform 0.3s ease, font-size 0.3s ease;
-    }
+        header h1 {
+            font-size: 3.2rem;
+            color: #FFD700;
+            margin: 0;
+        }
 
-    .socials a:hover {
-        transform: scale(1.5);
-        color: #fff;
-        font-size: 2.9rem;
-    }
+        .socials a {
+            margin-left: 2rem;
+            font-size: 2.5rem;
+            color: #FFD700;
+            transition: transform 0.3s ease, font-size 0.3s ease;
+        }
 
-    .tagline {
-        text-align: center;
-        font-size: 1.7rem;
-        color: #ccc;
-        margin-top: 1.2rem;
-        padding: 1rem 2rem 2.5rem;
-    }
+        .socials a:hover {
+            transform: scale(1.5);
+            color: #fff;
+            font-size: 2.9rem;
+        }
 
-    .tagline .highlight {
-        color: #FFD700;
-        font-weight: bold;
-    }
+        .tagline {
+            text-align: center;
+            font-size: 1.7rem;
+            color: #ccc;
+            margin-top: 1.2rem;
+            padding: 1rem 2rem 2.5rem;
+        }
 
-    .highlights {
-        display: flex;
-        justify-content: space-around;
-        gap: 2rem;
-        padding: 2rem 1rem;
-        flex-wrap: wrap;
-        max-width: 1200px;
-        margin: auto;
-    }
+        .tagline .highlight {
+            color: #FFD700;
+            font-weight: bold;
+        }
 
-    .highlight-box {
-        background-color: #1a1a1a;
-        padding: 2rem;
-        border: 2px solid #FFD700;
-        border-radius: 15px;
-        flex: 1;
-        min-width: 250px;
-        text-align: center;
-        color: #FFD700;
-        transition: transform 0.3s ease;
-    }
+        .highlights {
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+            padding: 2rem 1rem;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-    .highlight-box:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 15px #FFD700;
-    }
+        .highlight-box {
+            background-color: #1a1a1a;
+            padding: 2rem;
+            border: 2px solid #FFD700;
+            border-radius: 15px;
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            color: #FFD700;
+            transition: transform 0.3s ease;
+        }
 
-    .highlight-box h3 {
-        font-size: 1.9rem;
-        margin-bottom: 0.6rem;
-    }
+        .highlight-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #FFD700;
+        }
 
-    .highlight-box p {
-        font-size: 1.3rem;
-        color: #eeeeee;
-    }
+        .highlight-box h3 {
+            font-size: 1.9rem;
+            margin-bottom: 0.6rem;
+        }
 
-    .section {
-        padding: 3rem 1rem;
-        max-width: 1300px;
-        margin: auto;
-    }
+        .highlight-box p {
+            font-size: 1.3rem;
+            color: #eeeeee;
+        }
 
-    .section h2 {
-        color: #FFD700;
-        text-align: center;
-        font-size: 2.7rem;
-        margin-bottom: 3rem;
-    }
+        .section {
+            padding: 3rem 1rem;
+            max-width: 1300px;
+            margin: auto;
+        }
 
-    .projects {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-        gap: 2.5rem;
-    }
+        .section h2 {
+            color: #FFD700;
+            text-align: center;
+            font-size: 2.7rem;
+            margin-bottom: 3rem;
+        }
 
-    .project {
-        background-color: #1a1a1a;
-        padding: 1.5rem;
-        border-radius: 15px;
-        border: 2px solid #FFD700;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
 
-    .project:hover {
-        transform: scale(1.02);
-        box-shadow: 0 0 20px #FFD700;
-    }
+        .project {
+            background-color: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 2px solid #FFD700;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .project h3 {
-        margin: 0 0 0.8rem;
-        color: #FFD700;
-        font-size: 2rem;
-    }
+        .project:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px #FFD700;
+        }
 
-    .project iframe {
-        width: 100%;
-        height: 320px;
-        border: none;
-        border-radius: 12px;
-    }
+        .project h3 {
+            margin: 0 0 0.8rem;
+            color: #FFD700;
+            font-size: 2rem;
+        }
 
-    .project p {
-        margin-top: 1.2rem;
-        font-size: 1.3rem;
-        color: #FFD700;
-    }
+        .project iframe {
+            width: 100%;
+            height: 320px;
+            border: none;
+            border-radius: 12px;
+        }
 
-    .placeholder {
-        width: 100%;
-        height: 320px;
-        background-color: #333;
-        border-radius: 12px;
-    }
+        .project p {
+            margin-top: 1.2rem;
+            font-size: 1.3rem;
+            color: #FFD700;
+        }
 
-    .contact {
-        text-align: center;
-        padding-top: 3rem;
-    }
+        .placeholder {
+            width: 100%;
+            height: 320px;
+            background-color: #333;
+            border-radius: 12px;
+        }
 
-    .contact h2 {
-        font-size: 2.2rem;
-        color: #FFD700;
-    }
+        .contact {
+            text-align: center;
+            padding-top: 3rem;
+        }
 
-    .contact a {
-        color: #FFD700;
-        font-size: 1.5rem;
-        text-decoration: none;
-    }
+        .contact h2 {
+            font-size: 2.2rem;
+            color: #FFD700;
+        }
 
-    .contact a:hover {
-        text-decoration: underline;
-    }
+        .contact a {
+            color: #FFD700;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
 
-    .whatsapp {
-        margin-top: 1rem;
-    }
+        .contact a:hover {
+            text-decoration: underline;
+        }
 
-    .whatsapp a {
-        color: #FFD700;
-        font-size: 1.5rem;
-        text-decoration: none;
-    }
+        .whatsapp {
+            margin-top: 1rem;
+        }
 
-    .whatsapp a:hover {
-        text-decoration: underline;
-    }
+        .whatsapp a {
+            color: #FFD700;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
 
-    footer {
-        text-align: center;
-        padding: 1.5rem;
-        color: #666;
-        border-top: 1px solid #333;
-        margin-top: 4rem;
-        font-size: 1rem;
-    }
-  </style>
+        .whatsapp a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: #666;
+            border-top: 1px solid #333;
+            margin-top: 4rem;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .title-wrapper {
+                margin-bottom: 1rem;
+            }
+
+            .socials {
+                display: flex;
+                gap: 1.5rem;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            .highlight-box h3 {
+                font-size: 1.4rem;
+            }
+
+            .highlight-box p {
+                font-size: 1.1rem;
+            }
+
+            .project iframe,
+            .placeholder {
+                height: 200px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-  <div class="hero-title">GAME DEVELOPER</div>
+    <div class="hero-title">GAME DEVELOPER</div>
 
-  <header>
-    <div class="title-wrapper">
-      <h1>HananDev</h1>           
-    </div>
-    <div class="socials">
-      <a href="https://www.youtube.com/@BOSS_Studio_o" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.facebook.com/profile.php?id=61563591180711" target="_blank"><i class="fab fa-facebook"></i></a>
-    </div>
-  </header>
+    <header>
+        <div class="title-wrapper">
+            <img src="logo.png" alt="Logo" class="logo" />
+            <h1>HananDev</h1>           
+        </div>
+        <div class="socials">
+            <a href="https://www.youtube.com/@BOSS_Studio_o" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61563591180711" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </header>
 
-  <div class="tagline">
-    Professional game developer with over <span class="highlight">6</span> years of experience. Started at <span class="highlight">14</span>, now building Unity-based games with performance and architecture as a top priority.
-  </div>
+    <div class="tagline">
+        Professional game developer with over <span class="highlight">6</span> years of experience in the field. I began crafting games at just <span class="highlight">14</span> years old, and since then I’ve evolved into a performance-focused engineer. My primary stack is Unity, where I create scalable architectures, responsive gameplay, and robust custom tools — all built to deliver top-tier interactive experiences.
+    </div>
 
-  <div class="highlights">
-    <div class="highlight-box">
-      <h3>Experience</h3>
-      <p><span class="highlight">6</span> Years in Game Dev</p>
+    <div class="highlights">
+        <div class="highlight-box">
+            <h3>Experience</h3>
+            <p><span class="highlight">6</span> Years in Game Development</p>
+        </div>
+        <div class="highlight-box">
+            <h3>Game Engine</h3>
+            <p>Unity (C# / Custom Systems)</p>
+        </div>
+        <div class="highlight-box">
+            <h3>Expertise</h3>
+            <p>Performance Optimization & Clean Architecture</p>
+        </div>
     </div>
-    <div class="highlight-box">
-      <h3>Game Engine</h3>
-      <p>Unity (C# / Custom Systems)</p>
-    </div>
-    <div class="highlight-box">
-      <h3>Expertise</h3>
-      <p>Optimization & Clean Architecture</p>
-    </div>
-  </div>
 
-  <section class="section">
-    <h2>Game Showcases</h2>
-    <div class="projects">
-      <div class="project">
-        <h3>My Game Trailer</h3>
-        <iframe src="https://www.youtube.com/embed/au5YnrbgX0U" allowfullscreen></iframe>
-        <p>High-speed action built with Unity and C++ backend systems.</p>
-      </div>
-      <div class="project">
-        <h3>Coming Soon</h3>
-        <div class="placeholder"></div>
-        <p>Big drop on the way. Stay sharp.</p>
-      </div>
-      <div class="project">
-        <h3>Coming Soon</h3>
-        <div class="placeholder"></div>
-        <p>Next-level showcase in development.</p>
-      </div>
-      <div class="project">
-        <h3>Coming Soon</h3>
-        <div class="placeholder"></div>
-        <p>Keep eyes here for the next launch.</p>
-      </div>
-    </div>
-  </section>
+    <section class="section">
+        <h2>Game Showcases</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>My Game Trailer</h3>
+                <iframe src="https://www.youtube.com/embed/au5YnrbgX0U" allowfullscreen></iframe>
+                <p>High-speed action and intense gameplay packed into this demo — built entirely in Unity with C++ custom systems.</p>
+            </div>
+            <div class="project">
+                <h3>Coming Soon</h3>
+                <div class="placeholder"></div>
+                <p>Stay tuned for the next drop — something epic is in the pipeline.</p>
+            </div>
+            <div class="project">
+                <h3>Coming Soon</h3>
+                <div class="placeholder"></div>
+                <p>Work in progress — next showcase will blow your mind.</p>
+            </div>
+            <div class="project">
+                <h3>Coming Soon</h3>
+                <div class="placeholder"></div>
+                <p>More gameplay goodness coming soon. Keep your eyes here.</p>
+            </div>
+        </div>
+    </section>
 
-  <section class="section contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:abdulhanan.workmail@gmail.com">abdulhanan.workmail@gmail.com</a></p>
-    <div class="whatsapp">
-      <p>
-        Or message me on
-        <a href="https://wa.me/923168542005" target="_blank">
-          <i class="fab fa-whatsapp" style="margin-right: 0.5rem;"></i>
-          WhatsApp: 0316 8542005
-        </a>
-      </p>
-    </div>
-  </section>
+    <section class="section contact">
+        <h2>Contact</h2>
+        <p>Email me at <a href="mailto:abdulhanan.workmail@gmail.com">abdulhanan.workmail@gmail.com</a></p>
+        <div class="whatsapp">
+            <p>
+                Or message me on
+                <a href="https://wa.me/923168542005" target="_blank">
+                    <i class="fab fa-whatsapp" style="margin-right: 0.5rem;"></i>
+                    WhatsApp: 0316 8542005
+                </a>
+            </p>
+        </div>
+    </section>
 
-  <footer>
-    &copy; 2025 HananDev. All rights reserved.
-  </footer>
+    <footer>
+        &copy; 2025 HananDev. All rights reserved.
+    </footer>
 
 </body>
 </html>
