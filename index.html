@@ -13,92 +13,181 @@
   <meta property="og:image" content="logo.png">
 
   <link rel="icon" type="image/png" href="logo.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
-    body {
-      margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background-color: #0d0d0d;
-      color: #eeeeee;
+    :root {
+      --primary: #FFD700;
+      --primary-dark: #e5c100;
+      --dark: #0d0d0d;
+      --dark-light: #1a1a1a;
+      --text: #eeeeee;
+      --text-secondary: #cccccc;
     }
-
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      background-color: var(--dark);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, h5 {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    /* Animated Background */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    
     /* Header */
     header {
-      background-color: #0d0d0d;
-      padding: 1rem 2rem 1.5rem;
+      background-color: rgba(13, 13, 13, 0.85);
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 2px solid #FFD700;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--primary);
       flex-wrap: wrap;
     }
+    
     .title-wrapper {
       display: flex;
       align-items: center;
       gap: 1.2rem;
     }
+    
     .logo {
       height: 60px;
       width: 60px;
       object-fit: contain;
       border-radius: 12px;
-      box-shadow: 0 0 10px #FFD700;
-    }
-    header h1 {
-      font-size: 2.6rem;
-      color: #FFD700;
-      margin: 0;
-    }
-    .socials a {
-      margin-left: 1.2rem;
-      font-size: 2rem;
-      color: #FFD700;
+      box-shadow: 0 0 10px var(--primary);
       transition: transform 0.3s ease;
     }
-    .socials a:hover {
-      transform: scale(1.3);
-      color: #fff;
+    
+    .logo:hover {
+      transform: rotate(5deg) scale(1.05);
     }
-
+    
+    header h1 {
+      font-size: 2.6rem;
+      margin: 0;
+      text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+    }
+    
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    
+    .socials a {
+      font-size: 1.8rem;
+      color: var(--primary);
+      transition: all 0.3s ease;
+    }
+    
+    .socials a:hover {
+      transform: translateY(-3px);
+      color: #fff;
+      text-shadow: 0 0 8px var(--primary);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-left: 2rem;
+    }
+    
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    
     /* CV Button */
     .cv-btn {
-      margin-left: 1.5rem;
       padding: 0.6rem 1.2rem;
-      border: 2px solid #FFD700;
+      border: 2px solid var(--primary);
       background: none;
-      color: #FFD700;
+      color: var(--primary);
       font-weight: bold;
       border-radius: 8px;
       text-decoration: none;
-      transition: 0.3s;
+      transition: all 0.3s ease;
+      font-family: 'Rajdhani', sans-serif;
     }
+    
     .cv-btn:hover {
-      background: #FFD700;
-      color: #0d0d0d;
+      background: var(--primary);
+      color: var(--dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
     }
-
-    /* Hero */
+    
+    /* Hero Section */
+    .hero {
+      padding: 4rem 1rem 2rem;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
     .hero-title {
-      text-align: center;
-      font-size: 3rem;
-      margin: 1.5rem 0 0.5rem;
-      color: #FFD700;
-      text-shadow: 0 0 10px #FFD700;
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+      animation: glow 2s infinite alternate;
     }
+    
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px var(--primary);
+      }
+      to {
+        text-shadow: 0 0 20px var(--primary), 0 0 30px var(--primary-dark);
+      }
+    }
+    
     .tagline {
-      text-align: center;
-      font-size: 1.3rem;
-      color: #ccc;
-      margin-top: 0.8rem;
-      padding: 0 2rem 2rem;
+      font-size: 1.5rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
+    
     .tagline .highlight {
-      color: #FFD700;
+      color: var(--primary);
       font-weight: bold;
     }
-
+    
     /* Highlights */
     .highlights {
       display: flex;
@@ -109,70 +198,186 @@
       max-width: 1200px;
       margin: auto;
     }
+    
     .highlight-box {
-      background-color: #1a1a1a;
-      padding: 1.5rem;
-      border: 2px solid #FFD700;
+      background: linear-gradient(145deg, #1a1a1a, #151515);
+      padding: 2rem 1.5rem;
+      border: 1px solid rgba(255, 215, 0, 0.3);
       border-radius: 12px;
       flex: 1;
       min-width: 230px;
       text-align: center;
-      color: #FFD700;
-      transition: transform 0.3s ease;
+      color: var(--primary);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+    
     .highlight-box:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px #FFD700;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+      border-color: var(--primary);
     }
+    
     .highlight-box h3 {
       font-size: 1.5rem;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.8rem;
     }
-
+    
+    .highlight-box p {
+      color: var(--text-secondary);
+    }
+    
+    /* CV Buttons */
+    .cv-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem auto;
+      flex-wrap: wrap;
+    }
+    
+    .cv-button {
+      padding: 0.8rem 1.8rem;
+      border: 2px solid var(--primary);
+      background: rgba(255, 215, 0, 0.1);
+      color: var(--primary);
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Rajdhani', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .cv-button:hover {
+      background: var(--primary);
+      color: var(--dark);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+    }
+    
     /* Sections */
     .section {
-      padding: 3rem 1rem;
+      padding: 5rem 1rem;
       max-width: 1300px;
       margin: auto;
     }
-    .section h2 {
-      color: #FFD700;
+    
+    .section-title {
       text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      position: relative;
+      padding-bottom: 1rem;
     }
-
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 3px;
+    }
+    
+    /* Skills Section */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .skill-category {
+      background: linear-gradient(145deg, #1a1a1a, #151515);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 215, 0, 0.2);
+    }
+    
+    .skill-category h3 {
+      margin-bottom: 1.2rem;
+      font-size: 1.4rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    
+    .skill {
+      background: rgba(255, 215, 0, 0.1);
+      color: var(--primary);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255, 215, 0, 0.3);
+    }
+    
     /* Projects */
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
     }
+    
     .project {
-      background-color: #1a1a1a;
-      padding: 1.5rem;
+      background: linear-gradient(145deg, #1a1a1a, #151515);
+      padding: 1.8rem;
       border-radius: 12px;
-      border: 2px solid #FFD700;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      transition: all 0.3s ease;
       opacity: 0;
       transform: translateY(30px);
       animation: fadeInUp 1s forwards;
+      position: relative;
+      overflow: hidden;
     }
+    
+    .project::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+    
+    .project:hover::before {
+      transform: translateX(0);
+    }
+    
     .project:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 15px #FFD700;
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      border-color: var(--primary);
     }
+    
     .project h3 {
       margin: 0 0 0.6rem;
-      color: #FFD700;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
     }
+    
     .project small {
       display: inline-block;
-      margin-bottom: 0.8rem;
-      color: #bbb;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
       font-size: 0.9rem;
     }
+    
     .video-thumb {
       width: 100%;
       height: 200px;
@@ -181,25 +386,35 @@
       border-radius: 10px;
       cursor: pointer;
       position: relative;
+      overflow: hidden;
+      margin-bottom: 1.2rem;
     }
+    
     .video-thumb::after {
       content: "\f04b";
       font-family: "Font Awesome 6 Free";
       font-weight: 900;
       font-size: 2.5rem;
-      color: #FFD700;
+      color: var(--primary);
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      text-shadow: 0 0 10px black;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+      transition: all 0.3s ease;
     }
+    
+    .video-thumb:hover::after {
+      transform: translate(-50%, -50%) scale(1.2);
+      color: #fff;
+    }
+    
     .project p {
       margin-top: 1rem;
       font-size: 1rem;
-      color: #eee;
+      color: var(--text);
     }
-
+    
     /* Animations */
     @keyframes fadeInUp {
       to {
@@ -207,127 +422,291 @@
         transform: translateY(0);
       }
     }
-
+    
     /* Contact */
-    .contact {
-      text-align: center;
+    .contact-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+      align-items: start;
     }
-    .contact h2 {
-      font-size: 2rem;
-      color: #FFD700;
-      margin-bottom: 1rem;
+    
+    .contact-info {
+      background: linear-gradient(145deg, #1a1a1a, #151515);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 215, 0, 0.2);
     }
-    .contact a {
-      color: #FFD700;
-      font-size: 1.2rem;
+    
+    .contact-info h3 {
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+    }
+    
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-detail i {
+      font-size: 1.5rem;
+      color: var(--primary);
+      width: 30px;
+    }
+    
+    .contact-detail a {
+      color: var(--text);
       text-decoration: none;
+      transition: color 0.3s ease;
     }
-    .contact a:hover {
-      text-decoration: underline;
+    
+    .contact-detail a:hover {
+      color: var(--primary);
     }
+    
     .form-box {
-      margin: 1.5rem auto;
-      max-width: 500px;
+      background: linear-gradient(145deg, #1a1a1a, #151515);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 215, 0, 0.2);
     }
+    
+    .form-box h3 {
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+    }
+    
     form input, form textarea {
       width: 100%;
-      padding: 0.8rem;
-      margin: 0.5rem 0;
+      padding: 1rem;
+      margin: 0.5rem 0 1.2rem;
       border-radius: 8px;
-      border: none;
+      border: 1px solid #333;
       font-family: inherit;
+      background: rgba(0, 0, 0, 0.3);
+      color: var(--text);
+      transition: all 0.3s ease;
     }
+    
+    form input:focus, form textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+    }
+    
     form button {
-      background: #FFD700;
+      background: var(--primary);
       border: none;
-      padding: 0.8rem 1.2rem;
+      padding: 1rem 2rem;
       border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
-      transition: background 0.3s;
+      transition: all 0.3s ease;
+      color: var(--dark);
+      font-family: 'Rajdhani', sans-serif;
+      width: 100%;
     }
+    
     form button:hover {
-      background: #e5c100;
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
     }
-
+    
     footer {
       text-align: center;
-      padding: 1.5rem;
+      padding: 2.5rem 1rem;
       color: #666;
       border-top: 1px solid #333;
       margin-top: 3rem;
       font-size: 0.9rem;
+      background: rgba(13, 13, 13, 0.8);
+    }
+    
+    /* Video Modal */
+    #videoModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      backdrop-filter: blur(5px);
+    }
+    
+    #videoModal iframe {
+      width: 80%;
+      height: 70%;
+      border: 2px solid var(--primary);
+      border-radius: 8px;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+    }
+    
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    
+    .close-modal:hover {
+      color: var(--primary);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      
+      .nav-links {
+        margin-left: 0;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .tagline {
+        font-size: 1.2rem;
+      }
+      
+      .section {
+        padding: 3rem 1rem;
+      }
+      
+      .projects {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-content {
+        grid-template-columns: 1fr;
+      }
+      
+      #videoModal iframe {
+        width: 95%;
+        height: 50%;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
 
   <header>
     <div class="title-wrapper">
       <img src="logo.png" alt="Logo" class="logo" />
       <h1>HananDev</h1>
     </div>
+    
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    
     <div class="socials">
-      <a href="https://www.youtube.com/@BOSS_Studio_o" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.facebook.com/profile.php?id=61563591180711" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.youtube.com/@BOSS_Studio_o" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61563591180711" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
       <a href="cv.pdf" target="_blank" class="cv-btn">View CV</a>
     </div>
   </header>
 
-  <div class="hero-title">GAME DEVELOPER</div>
-  <div class="tagline">
-    Professional game developer with over <span class="highlight">6</span> years of experience.  
-    My primary stack is <span class="highlight">Unity</span>, where I build scalable architectures, responsive gameplay, and robust custom tools.  
-  </div>
+  <section id="home" class="hero">
+    <h1 class="hero-title">GAME DEVELOPER</h1>
+    <div class="tagline">
+      Professional game developer with over <span class="highlight">6</span> years of experience.  
+      My primary stack is <span class="highlight">Unity</span>, where I build scalable architectures, responsive gameplay, and robust custom tools.  
+    </div>
 
- <div class="highlights">
-  <div class="highlight-box">
-    <h3>Experience</h3>
-    <p><span class="highlight">6+</span> Years</p>
-  </div>
-  <div class="highlight-box">
-    <h3>Game Engine</h3>
-    <p>Unity (C# / Custom Systems)</p>
-  </div>
-  <div class="highlight-box">
-    <h3>Projects Completed</h3>
-    <p><span class="highlight">10+</span> Published</p>
-  </div>
-</div>
+    <div class="highlights">
+      <div class="highlight-box">
+        <h3>Experience</h3>
+        <p><span class="highlight">6+</span> Years</p>
+      </div>
+      <div class="highlight-box">
+        <h3>Game Engine</h3>
+        <p>Unity (C# / Custom Systems)</p>
+      </div>
+      <div class="highlight-box">
+        <h3>Projects Completed</h3>
+        <p><span class="highlight">10+</span> Published</p>
+      </div>
+    </div>
 
-<!-- CV Buttons Section (Centered Below Highlights) -->
-<div style="margin-top: 20px; text-align: center;">
-  <!-- View CV Button -->
-  <a href="cv.pdf" target="_blank" style="text-decoration:none; outline:none;">
-    <button style="padding:12px 25px; margin:8px; border:2px solid gold; background:black; color:gold; font-weight:bold; border-radius:8px; cursor:pointer; transition:0.3s;">
-      📄 View CV
-    </button>
-  </a>
+    <div class="cv-buttons">
+      <a href="cv.pdf" target="_blank" class="cv-button">
+        <i class="far fa-file-alt"></i> View CV
+      </a>
+      <a href="cv.pdf" download class="cv-button">
+        <i class="fas fa-download"></i> Download CV
+      </a>
+    </div>
+  </section>
 
-  <!-- Download CV Button -->
-  <a href="cv.pdf" download style="text-decoration:none; outline:none;">
-    <button style="padding:12px 25px; margin:8px; border:2px solid gold; background:black; color:gold; font-weight:bold; border-radius:8px; cursor:pointer; transition:0.3s;">
-      ⬇️ Download CV
-    </button>
-  </a>
-</div>
-
-<style>
-  /* Hover Effects */
-  a button:hover {
-    background: gold;
-    color: black;
-    transform: scale(1.05);
-  }
-  a {
-    text-decoration: none !important;
-    outline: none !important;
-  }
-</style>
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <h2 class="section-title">Skills & Expertise</h2>
+    
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3><i class="fas fa-gamepad"></i> Game Development</h3>
+        <div class="skill-list">
+          <span class="skill">Unity Engine</span>
+          <span class="skill">C# Programming</span>
+          <span class="skill">Game Design</span>
+          <span class="skill">UI/UX Design</span>
+          <span class="skill">Physics Systems</span>
+          <span class="skill">AI Programming</span>
+        </div>
+      </div>
+      
+      <div class="skill-category">
+        <h3><i class="fas fa-paint-brush"></i> Art & Design</h3>
+        <div class="skill-list">
+          <span class="skill">3D Modeling</span>
+          <span class="skill">Texture Creation</span>
+          <span class="skill">Animation</span>
+          <span class="skill">Lighting</span>
+          <span class="skill">Shader Programming</span>
+          <span class="skill">VFX</span>
+        </div>
+      </div>
+      
+      <div class="skill-category">
+        <h3><i class="fas fa-code"></i> Programming</h3>
+        <div class="skill-list">
+          <span class="skill">C#</span>
+          <span class="skill">C++</span>
+          <span class="skill">Python</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">ShaderLab</span>
+          <span class="skill">Optimization</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Projects -->
-  <section class="section">
-    <h2>Game Showcases</h2>
+  <section id="projects" class="section">
+    <h2 class="section-title">Game Showcases</h2>
     <div class="projects">
 
       <div class="project">
@@ -362,18 +741,43 @@
   </section>
 
   <!-- Contact -->
-  <section class="section contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:abdulhanan.workmail@gmail.com">abdulhanan.workmail@gmail.com</a></p>
-    <p>WhatsApp: <a href="https://wa.me/923168542005" target="_blank">+92 316 8542005</a></p>
+  <section id="contact" class="section">
+    <h2 class="section-title">Contact</h2>
+    
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        
+        <div class="contact-detail">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:abdulhanan.workmail@gmail.com">abdulhanan.workmail@gmail.com</a>
+        </div>
+        
+        <div class="contact-detail">
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/923168542005" target="_blank">+92 316 8542005</a>
+        </div>
+        
+        <div class="contact-detail">
+          <i class="fab fa-youtube"></i>
+          <a href="https://www.youtube.com/@BOSS_Studio_o" target="_blank">YouTube Channel</a>
+        </div>
+        
+        <div class="contact-detail">
+          <i class="fab fa-facebook"></i>
+          <a href="https://www.facebook.com/profile.php?id=61563591180711" target="_blank">Facebook Page</a>
+        </div>
+      </div>
+      
+    <form
+  action="https://formspree.io/f/xdklvrdg"method="POST">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="_replyto" placeholder="Your Email" required>
+  <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
 
-    <div class="form-box">
-      <form action="https://formspree.io/f/yourFormID" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="_replyto" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+      </div>
     </div>
   </section>
 
@@ -382,19 +786,104 @@
   </footer>
 
   <!-- Video Modal -->
-  <div id="videoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center;">
-    <iframe id="videoFrame" width="80%" height="70%" frameborder="0" allowfullscreen></iframe>
+  <div id="videoModal">
+    <span class="close-modal" onclick="closeVideo()">&times;</span>
+    <iframe id="videoFrame" frameborder="0" allowfullscreen></iframe>
   </div>
 
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  
   <script>
+    // Initialize particles.js
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#FFD700" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5, random: true },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#FFD700",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          random: true,
+          straight: false,
+          out_mode: "out",
+          bounce: false
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" },
+          resize: true
+        }
+      },
+      retina_detect: true
+    });
+    
+    // Video modal functions
     function openVideo(videoId) {
       document.getElementById("videoModal").style.display = "flex";
       document.getElementById("videoFrame").src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+      document.body.style.overflow = "hidden";
     }
-    document.getElementById("videoModal").addEventListener("click", function () {
-      this.style.display = "none";
+    
+    function closeVideo() {
+      document.getElementById("videoModal").style.display = "none";
       document.getElementById("videoFrame").src = "";
+      document.body.style.overflow = "auto";
+    }
+    
+    // Close modal when clicking outside video
+    document.getElementById("videoModal").addEventListener("click", function(e) {
+      if (e.target === this) closeVideo();
     });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Add scroll animation to elements
+    function checkScroll() {
+      const elements = document.querySelectorAll('.project, .highlight-box, .skill-category');
+      
+      elements.forEach(element => {
+        const position = element.getBoundingClientRect();
+        
+        // If element is in viewport
+        if(position.top < window.innerHeight - 100) {
+          element.style.opacity = 1;
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    }
+    
+    // Initial check and add scroll event listener
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('load', checkScroll);
   </script>
 
 </body>
