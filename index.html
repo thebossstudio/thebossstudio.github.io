@@ -1,362 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HananDev | Game Developer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HananDev | Game Developer Portfolio</title>
 
-    <link rel="icon" type="image/png" href="logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- SEO -->
+  <meta name="description" content="Portfolio of HananDev, a professional Unity Game Developer with 6+ years of experience. Specializing in horror, survival, racing, and top-down games.">
+  <meta name="keywords" content="Game Developer, Unity, C#, Indie Games, Portfolio, Horror Games, Survival Games, Racing Games">
+  <meta property="og:title" content="HananDev | Game Developer Portfolio">
+  <meta property="og:description" content="Explore my Unity projects, including horror, survival, and racing games.">
+  <meta property="og:image" content="logo.png">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Orbitron', sans-serif;
-            background-color: #0d0d0d;
-            color: #eeeeee;
-        }
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-        .hero-title {
-            text-align: center;
-            font-size: 3.5rem;
-            margin: 1rem 0 0;
-            color: #FFD700;
-            text-shadow: 0 0 10px #FFD700;
-            animation: glowFade 2s ease-in-out infinite alternate;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0d0d0d;
+      color: #eeeeee;
+    }
 
-        @keyframes glowFade {
-            0% {
-                text-shadow: 0 0 5px #FFD700;
-            }
+    /* Header */
+    header {
+      background-color: #0d0d0d;
+      padding: 1rem 2rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #FFD700;
+      flex-wrap: wrap;
+    }
+    .title-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .logo {
+      height: 60px;
+      width: 60px;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #FFD700;
+    }
+    header h1 {
+      font-size: 2.6rem;
+      color: #FFD700;
+      margin: 0;
+    }
+    .socials a {
+      margin-left: 1.2rem;
+      font-size: 2rem;
+      color: #FFD700;
+      transition: transform 0.3s ease;
+    }
+    .socials a:hover {
+      transform: scale(1.3);
+      color: #fff;
+    }
 
-            100% {
-                text-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700;
-            }
-        }
+    /* CV Button */
+    .cv-btn {
+      margin-left: 1.5rem;
+      padding: 0.6rem 1.2rem;
+      border: 2px solid #FFD700;
+      background: none;
+      color: #FFD700;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .cv-btn:hover {
+      background: #FFD700;
+      color: #0d0d0d;
+    }
 
-        header {
-            background-color: #0d0d0d;
-            padding: 1rem 2rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #FFD700;
-            flex-wrap: wrap;
-        }
+    /* Hero */
+    .hero-title {
+      text-align: center;
+      font-size: 3rem;
+      margin: 1.5rem 0 0.5rem;
+      color: #FFD700;
+      text-shadow: 0 0 10px #FFD700;
+    }
+    .tagline {
+      text-align: center;
+      font-size: 1.3rem;
+      color: #ccc;
+      margin-top: 0.8rem;
+      padding: 0 2rem 2rem;
+    }
+    .tagline .highlight {
+      color: #FFD700;
+      font-weight: bold;
+    }
 
-        .title-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-        }
+    /* Highlights */
+    .highlights {
+      display: flex;
+      justify-content: space-around;
+      gap: 2rem;
+      padding: 2rem 1rem;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .highlight-box {
+      background-color: #1a1a1a;
+      padding: 1.5rem;
+      border: 2px solid #FFD700;
+      border-radius: 12px;
+      flex: 1;
+      min-width: 230px;
+      text-align: center;
+      color: #FFD700;
+      transition: transform 0.3s ease;
+    }
+    .highlight-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #FFD700;
+    }
+    .highlight-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
 
-        .logo {
-            height: 60px;
-            width: 60px;
-            object-fit: contain;
-            border-radius: 12px;
-            box-shadow: 0 0 10px #FFD700;
-        }
+    /* Sections */
+    .section {
+      padding: 3rem 1rem;
+      max-width: 1300px;
+      margin: auto;
+    }
+    .section h2 {
+      color: #FFD700;
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+    }
 
-        header h1 {
-            font-size: 3.2rem;
-            color: #FFD700;
-            margin: 0;
-        }
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .project {
+      background-color: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 2px solid #FFD700;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
+    }
+    .project:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 15px #FFD700;
+    }
+    .project h3 {
+      margin: 0 0 0.6rem;
+      color: #FFD700;
+      font-size: 1.4rem;
+    }
+    .project small {
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      color: #bbb;
+      font-size: 0.9rem;
+    }
+    .video-thumb {
+      width: 100%;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      cursor: pointer;
+      position: relative;
+    }
+    .video-thumb::after {
+      content: "\f04b";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      font-size: 2.5rem;
+      color: #FFD700;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-shadow: 0 0 10px black;
+    }
+    .project p {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #eee;
+    }
 
-        .socials a {
-            margin-left: 2rem;
-            font-size: 2.5rem;
-            color: #FFD700;
-            transition: transform 0.3s ease, font-size 0.3s ease;
-        }
+    /* Animations */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-            .socials a:hover {
-                transform: scale(1.5);
-                color: #fff;
-                font-size: 2.9rem;
-            }
+    /* Contact */
+    .contact {
+      text-align: center;
+    }
+    .contact h2 {
+      font-size: 2rem;
+      color: #FFD700;
+      margin-bottom: 1rem;
+    }
+    .contact a {
+      color: #FFD700;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    .contact a:hover {
+      text-decoration: underline;
+    }
+    .form-box {
+      margin: 1.5rem auto;
+      max-width: 500px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border-radius: 8px;
+      border: none;
+      font-family: inherit;
+    }
+    form button {
+      background: #FFD700;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    form button:hover {
+      background: #e5c100;
+    }
 
-        .tagline {
-            text-align: center;
-            font-size: 1.7rem;
-            color: #ccc;
-            margin-top: 1.2rem;
-            padding: 1rem 2rem 2.5rem;
-        }
-
-            .tagline .highlight {
-                color: #FFD700;
-                font-weight: bold;
-            }
-
-        .highlights {
-            display: flex;
-            justify-content: space-around;
-            gap: 2rem;
-            padding: 2rem 1rem;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .highlight-box {
-            background-color: #1a1a1a;
-            padding: 2rem;
-            border: 2px solid #FFD700;
-            border-radius: 15px;
-            flex: 1;
-            min-width: 250px;
-            text-align: center;
-            color: #FFD700;
-            transition: transform 0.3s ease;
-        }
-
-            .highlight-box:hover {
-                transform: scale(1.05);
-                box-shadow: 0 0 15px #FFD700;
-            }
-
-            .highlight-box h3 {
-                font-size: 1.9rem;
-                margin-bottom: 0.6rem;
-            }
-
-            .highlight-box p {
-                font-size: 1.3rem;
-                color: #eeeeee;
-            }
-
-        .section {
-            padding: 3rem 1rem;
-            max-width: 1300px;
-            margin: auto;
-        }
-
-            .section h2 {
-                color: #FFD700;
-                text-align: center;
-                font-size: 2.7rem;
-                margin-bottom: 3rem;
-            }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
-        }
-
-        .project {
-            background-color: #1a1a1a;
-            padding: 1.5rem;
-            border-radius: 15px;
-            border: 2px solid #FFD700;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-            .project:hover {
-                transform: scale(1.02);
-                box-shadow: 0 0 20px #FFD700;
-            }
-
-            .project h3 {
-                margin: 0 0 0.8rem;
-                color: #FFD700;
-                font-size: 2rem;
-            }
-
-            .project iframe {
-                width: 100%;
-                height: 320px;
-                border: none;
-                border-radius: 12px;
-            }
-
-            .project p {
-                margin-top: 1.2rem;
-                font-size: 1.3rem;
-                color: #FFD700;
-            }
-
-        .placeholder {
-            width: 100%;
-            height: 320px;
-            background-color: #333;
-            border-radius: 12px;
-        }
-
-        .contact {
-            text-align: center;
-            padding-top: 3rem;
-        }
-
-            .contact h2 {
-                font-size: 2.2rem;
-                color: #FFD700;
-            }
-
-            .contact a {
-                color: #FFD700;
-                font-size: 1.5rem;
-                text-decoration: none;
-            }
-
-                .contact a:hover {
-                    text-decoration: underline;
-                }
-
-        .whatsapp {
-            margin-top: 1rem;
-        }
-
-            .whatsapp a {
-                color: #FFD700;
-                font-size: 1.5rem;
-                text-decoration: none;
-            }
-
-                .whatsapp a:hover {
-                    text-decoration: underline;
-                }
-
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            color: #666;
-            border-top: 1px solid #333;
-            margin-top: 4rem;
-            font-size: 1rem;
-        }
-
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .title-wrapper {
-                margin-bottom: 1rem;
-            }
-
-            .socials {
-                display: flex;
-                gap: 1.5rem;
-                justify-content: center;
-                width: 100%;
-            }
-
-            .hero-title {
-                font-size: 2.2rem;
-            }
-
-            header h1 {
-                font-size: 2.2rem;
-            }
-
-            .tagline {
-                font-size: 1.2rem;
-            }
-
-            .highlight-box h3 {
-                font-size: 1.4rem;
-            }
-
-            .highlight-box p {
-                font-size: 1.1rem;
-            }
-
-            .project iframe,
-            .placeholder {
-                height: 200px;
-            }
-
-            .projects {
-                grid-template-columns: 1fr !important;
-            }
-        }
-    </style>
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: #666;
+      border-top: 1px solid #333;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="hero-title">GAME DEVELOPER</div>
-
-    <header>
-        <div class="title-wrapper">
-            <img src="logo.png" alt="Logo" class="logo" />
-            <h1>HananDev</h1>
-        </div>
-        <div class="socials">
-            <a href="https://www.youtube.com/@BOSS_Studio_o" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=61563591180711" target="_blank"><i class="fab fa-facebook"></i></a>
-        </div>
-    </header>
-
-    <div class="tagline">
-        Professional game developer with over <span class="highlight">6</span> years of experience in the field. I began crafting games at just <span class="highlight">14</span> years old, and since then I’ve evolved into a performance-focused engineer. My primary stack is Unity, where I create scalable architectures, responsive gameplay, and robust custom tools — all built to deliver top-tier interactive experiences.
+  <header>
+    <div class="title-wrapper">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <h1>HananDev</h1>
     </div>
-
-    <div class="highlights">
-        <div class="highlight-box">
-            <h3>Experience</h3>
-            <p><span class="highlight">6</span> Years in Game Development</p>
-        </div>
-        <div class="highlight-box">
-            <h3>Game Engine</h3>
-            <p>Unity (C# / Custom Systems)</p>
-        </div>
-        <div class="highlight-box">
-            <h3>Projects Completed</h3>
-            <p><span class="highlight">10+</span> Projects Done</p>
-        </div>
+    <div class="socials">
+      <a href="https://www.youtube.com/@BOSS_Studio_o" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61563591180711" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="cv.pdf" target="_blank" class="cv-btn">View CV</a>
     </div>
+  </header>
 
-    <section class="section">
-        <h2>Game Showcases</h2>
-        <div class="projects">
-            <div class="project">
-                <h3>Bad Dream - Horror Game</h3>
-                <iframe src="https://www.youtube.com/embed/au5YnrbgX0U" allowfullscreen></iframe>
-                <p>A first-person horror experience crafted in Unity, featuring dynamic object interaction, immersive sound design, and real-time lighting. Players must navigate a dark, atmospheric basement — uncover clues, interact with the environment, survive jumpscares, and find the hidden key to escape.</p>
-            </div>
-            <div class="project">
-                <h3>Last Drop - FPS Survival</h3>
-                <iframe src="https://www.youtube.com/embed/VnhXbwZccTQ" allowfullscreen></iframe>
-                <p>A FPS survival game where you fight off enemy shooters, hostile bandits, and two types of zombies — weak runners and massive tanks with heavy health. Bandits can be turned into bodyguards to fight by your side. Features a full base-building system with placeable walls, floors, stairs, and doors, letting players craft defenses in a world that's always trying to kill them.</p>
-            </div>
-            <div class="project">
-                <h3>Racing Car Parking - Parking Game</h3>
-                <iframe src="https://www.youtube.com/embed/n7ulb08QzKA" allowfullscreen></iframe>
-                <p>A racing car parking game combining speed and precision. Navigate tight courses with realistic controls and park high-performance cars through increasingly difficult levels designed to test timing, reflexes, and accuracy under pressure.</p>
-            </div>
-            <div class="project">
-                <h3>Dark Dayz - Top Down Survival</h3>
-                <iframe src="https://www.youtube.com/embed/QsR-cbIm-f8" allowfullscreen></iframe>
-                <p>A top-down survival game where players face zombie waves while scavenging to survive. Build and upgrade a satellite system to unlock teleportation between safe zones and high-risk areas, adding strategy and freedom to exploration in a deadly world.</p>
-            </div>
-        </div>
-    </section>
+  <div class="hero-title">GAME DEVELOPER</div>
+  <div class="tagline">
+    Professional game developer with over <span class="highlight">6</span> years of experience.  
+    My primary stack is <span class="highlight">Unity</span>, where I build scalable architectures, responsive gameplay, and robust custom tools.  
+  </div>
 
-    <section class="section contact">
-        <h2>Contact</h2>
-        <p>Email me at <a href="mailto:abdulhanan.workmail@gmail.com">abdulhanan.workmail@gmail.com</a></p>
-        <div class="whatsapp">
-            <p>
-                Or message me on
-                <a href="https://wa.me/923168542005" target="_blank">
-                    <i class="fab fa-whatsapp" style="margin-right: 0.5rem;"></i>
-                    WhatsApp: 0316 8542005
-                </a>
-            </p>
-        </div>
-    </section>
+ <div class="highlights">
+  <div class="highlight-box">
+    <h3>Experience</h3>
+    <p><span class="highlight">6+</span> Years</p>
+  </div>
+  <div class="highlight-box">
+    <h3>Game Engine</h3>
+    <p>Unity (C# / Custom Systems)</p>
+  </div>
+  <div class="highlight-box">
+    <h3>Projects Completed</h3>
+    <p><span class="highlight">10+</span> Published</p>
+  </div>
+</div>
 
-    <footer>
-        &copy; 2025 HananDev. All rights reserved.
-    </footer>
+<!-- CV Buttons Section (Centered Below Highlights) -->
+<div style="margin-top: 20px; text-align: center;">
+  <!-- View CV Button -->
+  <a href="cv.pdf" target="_blank" style="text-decoration:none; outline:none;">
+    <button style="padding:12px 25px; margin:8px; border:2px solid gold; background:black; color:gold; font-weight:bold; border-radius:8px; cursor:pointer; transition:0.3s;">
+      📄 View CV
+    </button>
+  </a>
+
+  <!-- Download CV Button -->
+  <a href="cv.pdf" download style="text-decoration:none; outline:none;">
+    <button style="padding:12px 25px; margin:8px; border:2px solid gold; background:black; color:gold; font-weight:bold; border-radius:8px; cursor:pointer; transition:0.3s;">
+      ⬇️ Download CV
+    </button>
+  </a>
+</div>
+
+<style>
+  /* Hover Effects */
+  a button:hover {
+    background: gold;
+    color: black;
+    transform: scale(1.05);
+  }
+  a {
+    text-decoration: none !important;
+    outline: none !important;
+  }
+</style>
+
+  <!-- Projects -->
+  <section class="section">
+    <h2>Game Showcases</h2>
+    <div class="projects">
+
+      <div class="project">
+        <h3>Bad Dream - Horror Game</h3>
+        <small>PC Game</small>
+        <div class="video-thumb" style="background-image:url('https://img.youtube.com/vi/au5YnrbgX0U/hqdefault.jpg')" onclick="openVideo('au5YnrbgX0U')"></div>
+        <p>A first-person horror experience featuring dynamic object interaction, immersive sound design, and real-time lighting. Players explore a dark basement, uncover clues, and survive jumpscares to escape.</p>
+      </div>
+
+      <div class="project">
+        <h3>Last Drop - FPS Survival</h3>
+        <small>PC Game</small>
+        <div class="video-thumb" style="background-image:url('https://img.youtube.com/vi/VnhXbwZccTQ/hqdefault.jpg')" onclick="openVideo('VnhXbwZccTQ')"></div>
+        <p>FPS survival game with enemy shooters, bandits, and zombies. Features base-building, companion mechanics, and intense survival gameplay.</p>
+      </div>
+
+      <div class="project">
+        <h3>Racing Car Parking</h3>
+        <small>Mobile Game</small>
+        <div class="video-thumb" style="background-image:url('https://img.youtube.com/vi/n7ulb08QzKA/hqdefault.jpg')" onclick="openVideo('n7ulb08QzKA')"></div>
+        <p>Mobile racing car parking game combining speed and precision. Navigate tight courses and park high-performance cars through challenging levels.</p>
+      </div>
+
+      <div class="project">
+        <h3>Dark Dayz - Top Down Survival</h3>
+        <small>Mobile Game</small>
+        <div class="video-thumb" style="background-image:url('https://img.youtube.com/vi/QsR-cbIm-f8/hqdefault.jpg')" onclick="openVideo('QsR-cbIm-f8')"></div>
+        <p>Top-down mobile survival where players fight zombie waves, scavenge, and build satellite systems to teleport between safe zones.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:abdulhanan.workmail@gmail.com">abdulhanan.workmail@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/923168542005" target="_blank">+92 316 8542005</a></p>
+
+    <div class="form-box">
+      <form action="https://formspree.io/f/yourFormID" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 HananDev. All rights reserved.
+  </footer>
+
+  <!-- Video Modal -->
+  <div id="videoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center;">
+    <iframe id="videoFrame" width="80%" height="70%" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    function openVideo(videoId) {
+      document.getElementById("videoModal").style.display = "flex";
+      document.getElementById("videoFrame").src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+    }
+    document.getElementById("videoModal").addEventListener("click", function () {
+      this.style.display = "none";
+      document.getElementById("videoFrame").src = "";
+    });
+  </script>
 
 </body>
 </html>
